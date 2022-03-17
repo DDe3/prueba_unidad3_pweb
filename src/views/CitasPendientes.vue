@@ -4,7 +4,7 @@
   <input
       type="text"
       placeholder="Cedula del doctor..."
-      v-bind="this.cedula"
+      v-model="this.cedula"
     />
 
     <ul>
@@ -19,14 +19,13 @@ export default {
   data() {
     return {
       cedula : null,
-      citas : null,
+      citas : [],
     }
   },
   methods: {
     async consultarCitasPendientes() {
-      http://localhost:8080/#/ConsultaPaciente
-      response = await fetch(`http://localhost:8081/ApiCitas/V1/citas/${this.cedula}`).then(r=>r.json())
-      this.citas = response
+      http://localhost:8081/ApiCitas/V1/citas/1725875569
+      this.citas = await fetch(`http://localhost:8081/ApiCitas/V1/citas/${this.cedula}`).then(r=>r.json())
     }
   }
 
