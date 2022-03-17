@@ -20,7 +20,7 @@ export default {
     }
   },
   methods: {
-    consultarPaciente() {
+    async consultarPaciente() {
       http://localhost:8080/#/ConsultaPaciente
       response = await fetch(`http://localhost:8080/ApiPacientes/pacientes/${this.cedula}`).then(r=>r.json())
       this.paciente = response
