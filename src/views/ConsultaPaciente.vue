@@ -7,7 +7,7 @@
       v-bind="this.paciente"
     />
   <button @click="consultarPaciente">Consultar</button>
-  <h3 v-if="this.paciente">{{this.paciente}}</h3>
+  <h3 v-if="this.cedula">{{this.paciente}}</h3>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
   methods: {
     async consultarPaciente() {
       http://localhost:8080/#/ConsultaPaciente
-      response = await fetch(`http://localhost:8080/ApiPacientes/pacientes/${this.cedula}`).then(r=>r.json())
+      response = await fetch(`http://localhost:8081/ApiPacientes/V1/pacientes/${this.cedula}`).then(r=>r.json())
       this.paciente = response
     }
   }
